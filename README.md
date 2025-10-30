@@ -1,4 +1,4 @@
-# || Congressional App Challenege '25 : AllergyChef
+# || Congressional App Challenge '25 : AllergyChef
 ## What does it do?
 - Quickly checks products for allergens.
 - Providse allergen-free alternatives.
