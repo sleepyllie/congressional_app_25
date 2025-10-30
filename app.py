@@ -163,30 +163,6 @@ def get_usda_food(fdc_id = None):
     }
     return json.dumps(results)
 
-# @app.route('/api/usda/food/search/')
-# def api_search_usda_for_foods():
-#     name = request.args.get("term")
-#     url = f"https://api.nal.usda.gov/fdc/v1/foods/search?query={name}&dataType=Branded,Foundation,Survey%20%28FNDDS%29,SR%20Legacy&pageSize=10&pageNumber=1&sortBy=dataType.keyword&sortOrder=asc&api_key={USDA_API_KEY}"
-#     response = requests.get(url)
-#     json_data = response.json()
-#     results = []
-
-#     for food in json_data.get("foods", []):
-#         brand = food.get("brandOwner", "") or food.get("brandName", "")
-#         description = food.get("description", "")
-
-#         # Avoid repeating brand in description
-#         if brand.lower() in description.lower():
-#             brand = ""
-
-#         results.append({
-#             "label": f"{brand} {description}".strip(),  # For display in autocomplete
-#             "value": food.get("fdcId"),
-#             "brand": brand,
-#             "description": description
-#         })
-
-#     return json.dumps(results)
 
 @app.route('/api/usda/food/search/')
 def api_search_usda_for_foods():
