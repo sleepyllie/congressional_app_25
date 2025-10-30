@@ -18,11 +18,6 @@ async function handleFormSubmit(e, ui){
     e.preventDefault();
     $("#search-box").autocomplete("close"); // Close the autocomplete dropdown
     
-    // if (!textBox.value.trim()) {
-    //     window.location.href = "/"; // nutrient.html api endpoint
-    //     return;
-    // }
-    
     var searchValue = textBox.value;
     if (ui && ui.item && ui.item.value) {
         searchValue = ui.item.value;
