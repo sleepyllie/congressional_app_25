@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AllergyChef | Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/home.css') }}" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-inner">
+                <div class="nav-left">
+                    <img src="static/img/logo.png" alt="Logo" class="nav-logo" />
+                    <!-- <span class="brand">AllergyChef</span> -->
+                    <a href="/" style="text-decoration: none;"><span class="brand">AllergyChef</span></a>
+                </div>
+
+                <ul class="nav-center">
+                    <li><a href="/search">Search Products ▾</a></li>
+                    <li><a href="/meal-planner">Meal Planner ▾</a></li>
+                    <li><a href="/shopping-list">Shopping List</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <button class="sign-btn">Sign in</button>
+                    <button class="demo-btn" onclick="window.location.href = '{{ url_for('about_us') }}'" >About Us</button>
+                </div>
+            </div>
+        </nav>
+        <div class="welcome-title typewriter-effect">
+            <div class="blinking-border"></div>
+            <h1>Where <span style="font-style: italic; color: aliceblue;">allergies</span><br>aren't a worry.</h1>
+            <!--b82e4a-->
+        </div>
+    </header>
+    <div class="stacked-container">
+        <div class="header">
+            <button class="btn light">Learn More</button>
+            <h1 class="logo">AllergyChef</h1>
+            <button class="btn dark">Contact Us</button>
+        </div>
+        <div class="stack-layer"></div>
+
+        <section class="hero">
+            <div class="intro-badge">Introducing AllergyChef</div>
+            <h2 class="hero-title">Finally, an Authentic<br>Allergen-Checking Resource</h2>
+            <p class="hero-subtext">
+                Your new way to check for allergens in your favorite foods and grocery products, while exploring 
+                new options that <span class="description">DON'T</span> have your allergens, and adding them to your grocery list with our shopping list feature! Find <span class="description">alternatives</span>, <span class="description">meal plan</span>, and save yourself <span class="description">time</span> and <span class="description">uncomfortableness</span>. 
+            </p>
+        </section>
+    </div>
+
+</body>
+</html>

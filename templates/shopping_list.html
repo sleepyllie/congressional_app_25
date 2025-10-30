@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List | allergychef</title>
+<!-- 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}" /> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/shopping_list.css') }}" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-inner">
+                <div class="nav-left">
+                    <img src="static/img/logo.png" alt="Logo" class="nav-logo" />
+                    <!-- <span class="brand">AllergyChef</span> -->
+                    <a href="/" style="text-decoration: none;"><span class="brand">AllergyChef</span></a>
+                </div>
+
+                <ul class="nav-center">
+                    <li><a href="/search">Search Products ▾</a></li>
+                    <li><a href="/meal-planner">Meal Planner ▾</a></li>
+                    <li><a href="/shopping-list">Shopping List</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <button class="sign-btn">Sign in</button>
+                    <button class="demo-btn">About Us</button>
+                </div>
+            </div>
+        </nav>
+        <img src="static/img/logo.png" alt=logo">
+        <div class="welcome-title typewriter-effect">
+            <div class="blinking-border"></div>
+            <h1>Your Shopping List:</h1>
+            <!--b82e4a-->
+        </div>
+    </header>
+    <main>
+        <!-- <section class="heading">
+            <h1>Your Shopping List:</h1>
+        </section> -->
+        <section class="list-content" id="list-content">
+            <p class="loading-zone">Loading ...</p>
+        </section>
+    </main>
+    <script src="{{ url_for('static',filename='javascript/shopping_list.js') }}"></script>
+</body>
+</html>

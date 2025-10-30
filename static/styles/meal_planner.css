@@ -1,0 +1,393 @@
+header {
+  background-image: url("/static/img/grocery.jpg");
+  background-size: cover;
+  background-position: center center;
+  padding-bottom: 50px;
+  position: relative;
+  z-index: 0;
+
+  /* mask to fade the image to transparent toward the bottom */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+}
+
+header h1 {
+    background-color: rgba(255, 255, 255, 0.2); /* semi-transparent white */
+    padding: 8px 12px; /* some padding around the text */
+    border-radius: 8px; /* rounded corners for softness */
+    display: inline-block; /* shrink-wrap the text */
+    color: #222; /* dark text for contrast */
+    font-weight: 500;
+    backdrop-filter: blur(5px); /* optional: soft blur effect behind the heading */
+}
+
+.user-info {
+    display: flex;
+    flex-wrap: wrap;  
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.welcome-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 27px;
+    padding: 70px;
+}
+
+.typewriter-effect h1 {
+    overflow: hidden;
+    border-right: 0.15em solid white; 
+    line-height: 0.7em;
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .08em; 
+    animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 40% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white }
+}
+
+
+
+.container {
+    font-family: "Dongle", sans-serif;
+    width: 700px;
+    height: 300px;
+    aspect-ratio: 17.5/9.5;
+    padding: 20px;
+    margin: 20px auto;
+
+    background-image: url("/static/img/cows.jpg");
+    background-size: cover;              /* fill container, adjust if you prefer contain */
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    border-radius: 16px;                  /* rounded corners */
+    overflow: hidden;                     /* ensures background is clipped to radius */
+    -webkit-background-clip: padding-box; /* help ensure clipping on some browsers */
+    background-clip: padding-box;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;   /* stack children vertically */
+    align-items: center;      /* center horizontally */
+    justify-content: center;  /* center vertically (remove if not wanted) */
+}
+
+/* Center forms / groups inside the container */
+.container form,
+.container .allergy-form,
+.container .search-area {
+    display: flex;
+    flex-direction: column; /* use row if you want inputs side-by-side */
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 700px; /* match container width if desired */
+    box-sizing: border-box;
+    background-color: aliceblue;
+}
+
+/* Make inputs shrink to fit and stay centered */
+.container input[type="text"],
+.container input[type="search"],
+.container select,
+.container button {
+    width: 100%;
+    max-width: 700px;      /* don’t exceed container */
+    /* padding: 15px 20px; */
+    /* margin: 10px 0; */
+    /* width: 90%; */
+    max-width: 700px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 20px 25px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    width: 700px;
+    margin: 25px;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    /* border: 1px solid #ccc; */
+    -webkit-box-shadow: 11px 14px 24px 4px rgb(79, 111, 140); 
+    box-shadow: 11px 14px 24px 4px rgb(79, 111, 140);
+}
+
+
+.user-allergens {
+    text-align: center;
+    margin: 25px 50px;
+    padding: 25px;
+    /* border: 1px solid rgb(146, 178, 146); */
+    /* border-radius: 20px; */
+}
+input#allergy-search {
+  border: 1px solid rgb(237, 237, 237);
+  box-shadow: 11px 14px 24px 4px rgba(170, 170, 170, 0.6);
+  border-radius: 20px;
+  padding: 20px;
+  width: 450px;
+  margin: 5px;
+}
+
+input#allergy-search::placeholder {
+  text-align: center;
+  color:rgb(190, 208, 223);
+}
+
+#result-allergens li.contains-allergen {
+  color: red;
+  list-style: none;
+}
+
+#result-allergens li.allergen-free {
+  color: rgb(17, 204, 17);
+  list-style: none;
+}
+
+
+/* ensure content sits above the image + overlay */
+.container > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* remove solid white background so words sit on top of the image */
+.container h2 {
+    padding: 15px;
+    font-size: 50px;
+    text-align: center;
+    background-color: transparent;    /* was white; make transparent */
+    color: white;                     /* pick a color that contrasts with image */
+}
+
+/* ===== Navbar Styles ===== */
+body, .nav-center li a, .brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.4px;
+}
+
+.navbar {
+  width: 100%;
+  /* background-color: #9ee8f8; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px 35px 0px;
+  border-radius: 0 0 12px 12px;
+}
+
+.navbar-inner {
+  width: 90%;
+  max-width: 1100px;
+  background-color: white;
+  border: 2px solid #000;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 1.2rem;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-logo {
+  width: 28px;
+  height: 28px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.nav-center {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-center li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-center li a:hover {
+  color: #0097a7;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.sign-btn {
+  background-color: white;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 0.4rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.demo-btn {
+  background-color: #a5f236;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 0.4rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #000;
+}
+
+
+.allergy-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#search-form input[type="text"]{
+    padding: 20px 25px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    width: 700px;
+    margin: 25px auto;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    /* border: 1px solid #ccc; */
+    -webkit-box-shadow: 11px 14px 24px 4px rgb(79, 111, 140); 
+    box-shadow: 11px 14px 24px 4px rgb(79, 111, 140);
+    
+}
+.submit-btn {
+  display: flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#submit-btn {
+  margin: 0 auto; /* centers horizontally */
+  width: 500px;
+  padding: 20px;
+  border-radius: 23px;
+  background-color: aliceblue;
+  border: 1px solid rgb(79, 111, 140);
+}
+button#submit-btn:hover {
+  background-color: rgb(79, 111, 140);
+  color: white;
+  cursor: pointer;
+  transition: color 0.6s ease-in;
+}
+
+#search-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.meal-card {
+    background-color: #fdfdfd;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 20px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.meal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.meal-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.meal-card h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #314d66;
+}
+
+.meal-card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.meal-card p {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #444;
+    text-align: justify;
+}
+
+
+@media (max-width: 768px) {
+    .meal-card {
+        max-width: 90%;
+        padding: 15px;
+    }
+}
+.meal-card:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s;
+}
+
+.remove-btn {
+  background-color: maroon;
+  border-radius: 20px;
+  padding: 8px;
+  border: none;
+  color: white;
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+.remove-btn button:hover {
+  background-color: rgb(162, 38, 38);
+}

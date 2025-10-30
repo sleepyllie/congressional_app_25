@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About AllergyChef</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+        }
+        .divider {
+            border-top: 2px solid olivedrab;
+            width: 100px;
+            margin: 0 auto;
+        }
+        .our-mission p {
+            margin: 30px;
+            width: 600px;
+            text-align: center;
+            font-size: 22px;
+            font-family: 'Karla', sans-serif;
+            font-weight: 350;
+        }
+        .our-mission h3 {
+            text-align: center;
+            font-size: 37px;
+        }
+        .our-story {
+            background-color: rgba(186, 206, 147, 0.613);
+            border-radius: 20px;
+        }
+        .our-story p {
+            margin: 30px;
+            width: 600px;
+            text-align: left;
+            font-size: 22px;
+            font-family: 'Karla', sans-serif;
+            font-weight: 350;
+        }
+        .our-story h3{ 
+            text-align: left;
+            font-size: 37px;
+            margin: 30px;
+        }
+        .video {
+            border: 3px solid olivedrab;
+            padding: 70px;
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+            <div class="navbar-inner">
+                <div class="nav-left">
+                    <img src="static/img/logo.png" alt="Logo" class="nav-logo" />
+                    <!-- <span class="brand">AllergyChef</span> -->
+                    <a href="/" style="text-decoration: none;"><span class="brand">AllergyChef</span></a>
+                </div>
+
+                <ul class="nav-center">
+                    <li><a href="/search">Search Products ▾</a></li>
+                    <li><a href="/meal-planner">Meal Planner ▾</a></li>
+                    <li><a href="/alternatives">Find Alternatives ▾</a></li>
+                    <li><a href="/shopping-list">Shopping List</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <button class="sign-btn">Sign in</button>
+                    <button class="demo-btn" onclick="window.location.href = '{{ url_for('about_us') }}'" >About Us</button>
+                </div>
+            </div>
+    </nav>
+    </header>
+        <main>
+            <div class="container">
+                <div class="our-mission">
+                    <h3>Our Mission</h3>
+                    <div class="divider"></div>
+                    <p>We strive to promote equity between the population of people who have trouble with their meals -whether it be allergy or otherwise related- and those who have no issues in their everyday lives.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="video">
+
+                </div>
+                <div class="our-story">
+                    <h3>Our Story</h3>
+                    <p>I, the creator of this application, have struggled with rare food allergies as well as stomach issues, and as a result, finding grocery products or meals that I've been able to consume safely. Many of my friends have also suffered from food allergies and autoimmune diseases like Celiac disease. </p>
+                </div>
+            </div>
+        </main>
+</body>
+</html>

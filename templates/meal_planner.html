@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/meal_planner.css') }}" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <!-- == FONTS == -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+
+    <title>AllergyChef | Meal Planner</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-inner">
+                <div class="nav-left">
+                    <img src="static/img/logo.png" alt="Logo" class="nav-logo" />
+                    <!-- <span class="brand">AllergyChef</span> -->
+                    <a href="/" style="text-decoration: none;"><span class="brand">AllergyChef</span></a>
+                </div>
+
+                <ul class="nav-center">
+                    <li><a href="/search">Search Products ▾</a></li>
+                    <li><a href="/meal-planner">Meal Planner ▾</a></li>
+                    <li><a href="/shopping-list">Shopping List</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <button class="sign-btn">Sign in</button>
+                    <button class="demo-btn">About Us</button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="welcome-title typewriter-effect">
+            <div class="blinking-border"></div>
+            <h1 style="color: rgb(49, 77, 102); text-align: center;">Meal Pl<span style="color: white;">anner</span></h1>
+            <!--b82e4a-->
+        </div>
+    </header>
+    <main>
+        <section class="user-allergens">
+            <p><b>Filtered Allergens:</b> </p>
+            <ul id="result-allergens"></ul>
+
+            <h3>Add them here!</h3>
+            <input type="text" id="allergy-search" placeholder="Select an allergy ..." />
+        </section>
+        <section class="user-info">
+            <div class="container">
+                <h2>Category: What kind of meal?</h2>
+                <input type="text" id="category" placeholder="ex. breakfast" />
+            </div>
+            <div class="container">
+                <h2>Cuisine: What style of food?</h2>
+                <input type="text" id="cuisine" placeholder="ex. chinese" />
+            </div>
+        </section>
+        <div class="submit-btn"> 
+            <button id="submit-btn">Submit!</button> 
+        </div>
+
+        <!-- || DISPLAYS || -->
+        <div class="result-area" id="search-results">
+        
+        </div>
+    
+    </main>
+
+    <script src="{{ url_for('static',filename='javascript/meal_planner.js') }}"></script>
+</body>
+</html>

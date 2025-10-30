@@ -1,0 +1,228 @@
+/* ===== Body & Fonts ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    padding: 50px 20px 80px 20px;
+    background-image: url("/static/img/grocery.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column; /* stack elements vertically */
+    align-items: center; /* center horizontally */
+    justify-content: center; /* optional: center vertically if header height is fixed */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+}
+
+header h1 {
+    background-color: rgba(255, 255, 255, 0.2); /* semi-transparent white */
+    padding: 8px 12px; /* some padding around the text */
+    border-radius: 8px; /* rounded corners for softness */
+    display: inline-block; /* shrink-wrap the text */
+    color: #222; /* dark text for contrast */
+    font-weight: 500;
+    backdrop-filter: blur(5px); /* optional: soft blur effect behind the heading */
+}
+
+
+header img {
+    height: 100px;
+    width: 100px;
+    object-fit: contain; /* ensures the image scales nicely */
+    margin-bottom: 20px; /* space between image and title */
+}
+
+header .welcome-title {
+    font-family: 'Dongle', sans-serif;
+    display: inline-block;
+    padding: 0 10px;
+    color: rgb(42, 68, 90);
+    border-radius: 10px;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.navbar-inner {
+    width: 90%;
+    max-width: 1100px;
+    background-color: white;
+    border: 2px solid #000;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 1.2rem;
+    box-shadow: 3px 3px 0 #000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-logo {
+    width: 28px;
+    height: 28px;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #222;
+}
+
+.nav-center {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-center li a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-center li a:hover {
+    color: #0097a7;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.sign-btn, .demo-btn {
+    border-radius: 10px;
+    padding: 0.4rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+}
+
+.sign-btn {
+    background-color: white;
+    border: 2px solid #000;
+}
+
+.demo-btn {
+    background-color: #a5f236;
+    border: 2px solid #000;
+}
+
+/* ===== Shopping List Container ===== */
+.list-content {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* ===== Card-style Shopping List Items ===== */
+.shopping-list-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.shopping-list-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== Remove Button ===== */
+.shopping-list-item .remove-button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background-color 0.2s;
+}
+
+.shopping-list-item .remove-button:hover {
+    background-color: #c9302c;
+}
+
+/* ===== Expandable Ingredients List ===== */
+.ingredients-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-left: 10px;
+}
+
+.ingredients-container.open {
+    max-height: 400px; /* enough for several ingredients */
+}
+
+.toggle-ingredients-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    align-self: flex-start;
+}
+
+.toggle-ingredients-btn:hover {
+    background-color: #0056b3;
+}
+
+/* ===== Ingredients List ===== */
+.ingredients-container ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 8px 0;
+}
+
+/* ===== AOS Animations (optional) ===== */
+[data-aos] {
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .shopping-list-item {
+        padding: 16px;
+    }
+    .toggle-ingredients-btn {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+    }
+}
